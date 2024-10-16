@@ -1,9 +1,10 @@
+# -*- coding: utf-8 -*-
 from ViginereAnalysis import *
 
-with open("Ciphertext.txt", "r") as ciphertext:
+with open("Ciphertext.txt", mode="r", encoding="utf-8") as ciphertext:
     text = ciphertext.read()
 
-    cleanText = re.sub(r"[^a-zA-Z]+", '', text).lower()
+    cleanText = re.sub(r"[^а-яА-Я]+", '', text).lower()
     print(text)
     
     patterns = findPatterns(cleanText, 2, 25)
@@ -22,17 +23,3 @@ with open("Ciphertext.txt", "r") as ciphertext:
         print(decode(text, key))
 
         input("press any key to continue...")
-
-
-
-
-                
-
-
-
-            
-
-        
-
-
-            
